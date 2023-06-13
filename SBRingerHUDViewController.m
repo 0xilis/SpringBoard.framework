@@ -56,4 +56,36 @@
 -(void)noteVolumeUpWasHit {
  return;
 }
+-(void)nudgeUp:(BOOL)nudgeUp {
+ //i am so fucking confused i hate this i hate this i hate this
+ id progressIndicatorFuckYou = [SBHUDViewController progressIndicatorStep];
+ CGFloat vol = self->_volume;
+ if (!nudgeUp) {
+  int res = BSFloatLessThanOrEqualToFloat(progressIndicatorFuckYou, vol);
+  
+ } else {
+  BSFloatIsOne(vol);
+ }
+ [self _updateVolumeSliderAnimated:YES];
+}
+-(void)buttonReleased {
+ self->_overshoot = NO;
+ [self _updateVolumeSliderAnimated:YES];
+}
+-(void)noteVolumeDownWasHit {
+ return;
+}
+-(void)noteVolumeDidChange {
+ return;
+}
+-(void)refreshAudioUI {
+ return;
+}
+-(void)setVolume:(float)volume {
+ //YES!! THIS METHOD SAYS FUCK YOU TO THE PASSED IN VOLUME, WE ARE SETTING VOLUME TO MAX!! FUCK YEAH!!
+ [self setVolume:1 animated:NO forKeyPress:/* idk */];
+}
+-(BOOL)definesAnimatedDismissal {
+ return YES;
+}
 @end
