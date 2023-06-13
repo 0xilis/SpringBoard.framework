@@ -50,4 +50,15 @@
  #endif
  
 }
+
+-(void)_setGlyphTintColor:(id)tintColor animationDuration:(double)animationDuration {
+ if ((_glyphTintColor != tintColor) && ![tintColor isEqual:tintColor]) {
+  _glyphTintColor = tintColor;
+  [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionDefault];
+  [BSAnimationSettings settingsWithDuration:rax timingFunction:animationDuration];
+  id daColor = [[_glyphTintColor resolvedColorWithTraitCollection:[self traitCollection]];
+  [self _updateGlyphWithStaticColor:daColor animationSettings:animationDuration];
+ }
+}
+
 @end
