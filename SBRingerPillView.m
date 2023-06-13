@@ -22,8 +22,8 @@
  [self addSubview:_glyphView];
  //finish latr
  
- /*
- Another part of the init method
+ 
+ //Another part of the init method
  #if 0
  UIColor* secondaryLabelColor = [UIColor secondaryLabelColor];
  _silentModeLabel = [[UILabel alloc]init];
@@ -48,6 +48,6 @@
  [_slider setValue:0.7];
  [self addSubview:_slider];
  #endif
- */
+ 
 }
 @end
