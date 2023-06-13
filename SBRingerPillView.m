@@ -51,6 +51,16 @@
  
 }
 
+/*
+
+looks like in the layoutSubviews, depending on if silent is on or not, it sets something to [UIColor systemRedColor] or [UIColor secondaryLabelColor].
+
+it does this via [something _setGlyphTintColor:theUIColor animationDuration:0.25];
+
+0.25 is if theUIColor is [UIColor systemRedColor], and if it is [UIColor secondaryLabelColor] it is then 0.2155
+
+*/
+
 -(void)_setGlyphTintColor:(id)tintColor animationDuration:(double)animationDuration {
  if ((_glyphTintColor != tintColor) && ![tintColor isEqual:tintColor]) {
   _glyphTintColor = tintColor;
